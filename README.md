@@ -52,5 +52,4 @@
 
 ---
 # 아키텍처
-![패캠  게시판 서비스 아키텍처](https://github.com/ccommit-dev/Board-Server/assets/77635521/dd610bf4-4260-4ada-9897-286548d47ab3)
-
+![sli0](https://github.com/ccommit-dev/Board-Server/assets/77635521/bc8eb387-ec9b-4a51-9c55-80332aa88547)
