@@ -44,6 +44,10 @@
 
 ---
 # 시퀀스
+- 게시글 등록 시퀀스
+![패캠  게시글 등록 시퀀스](https://github.com/ccommit-dev/Board-Server/assets/77635521/7791db61-97cc-4ad8-a90c-2e0a572049c5)
+
+- 게시글 검색 시퀀스
 
 ---
 # 아키텍처
