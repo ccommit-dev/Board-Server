@@ -1,11 +1,11 @@
-<mxfile modified="2023-09-27T07:33:56.568Z" host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="TwJjHm63k8uBpKyuflUW" version="21.8.2" type="github">
+<mxfile modified="2023-09-27T07:53:04.014Z" host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="aj6fTpk82bALWTES7dEz" version="21.8.2" type="github">
   <diagram id="Ht1M8jgEwFfnCIfOTk4-" name="Page-1">
-    <mxGraphModel dx="1976" dy="1164" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="2307" dy="955" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="gSuPa3hESJbTdmmrSkDA-51" value="대용량 트래픽 상황에&#xa;운영 가능한 게시판 프로젝트" style="shape=table;childLayout=tableLayout;startSize=100;collapsible=0;recursiveResize=0;expand=0;fontSize=31;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="70" y="20" width="1630" height="836" as="geometry" />
+          <mxGeometry y="20" width="1630" height="836" as="geometry" />
         </mxCell>
         <mxCell id="gSuPa3hESJbTdmmrSkDA-52" value="개발 스택" style="shape=tableRow;horizontal=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;strokeColor=inherit;bottom=0;right=0;dropTarget=0;fontStyle=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;startSize=30;collapsible=0;recursiveResize=0;expand=0;fontSize=16;" vertex="1" parent="gSuPa3hESJbTdmmrSkDA-51">
           <mxGeometry y="100" width="1630" height="246" as="geometry" />
@@ -59,12 +59,28 @@
             <mxRectangle width="534" height="244" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="gSuPa3hESJbTdmmrSkDA-70" value="" style="swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=0;connectable=0;strokeColor=inherit;fillColor=none;startSize=0;collapsible=0;recursiveResize=0;expand=0;fontSize=16;" vertex="1" parent="gSuPa3hESJbTdmmrSkDA-58">
+          <mxGeometry x="-33" y="10" width="533" height="244" as="geometry">
+            <mxRectangle width="533" height="244" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gSuPa3hESJbTdmmrSkDA-71" value="&lt;div style=&quot;font-size: 24px;&quot;&gt;&lt;div&gt;&lt;b&gt;issue5: 댓글, 태그 기능 개발&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;issue6: 성능 테스트 진행&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;issue7: 성능 테스트 리팩토링&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="gSuPa3hESJbTdmmrSkDA-70">
+          <mxGeometry x="55" y="38" width="340" height="100" as="geometry" />
+        </mxCell>
         <mxCell id="gSuPa3hESJbTdmmrSkDA-59" value="" style="swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=0;connectable=0;strokeColor=inherit;fillColor=none;startSize=0;collapsible=0;recursiveResize=0;expand=0;fontSize=16;" vertex="1" parent="gSuPa3hESJbTdmmrSkDA-56">
           <mxGeometry x="1097" width="533" height="244" as="geometry">
             <mxRectangle width="533" height="244" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="gSuPa3hESJbTdmmrSkDA-60" value="실습 내용" style="shape=tableRow;horizontal=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;strokeColor=inherit;bottom=0;right=0;dropTarget=0;fontStyle=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;startSize=30;collapsible=0;recursiveResize=0;expand=0;fontSize=16;" vertex="1" parent="gSuPa3hESJbTdmmrSkDA-51">
+        <mxCell id="gSuPa3hESJbTdmmrSkDA-72" value="" style="swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=0;connectable=0;strokeColor=inherit;fillColor=none;startSize=0;collapsible=0;recursiveResize=0;expand=0;fontSize=16;" vertex="1" parent="gSuPa3hESJbTdmmrSkDA-59">
+          <mxGeometry x="2" width="533" height="244" as="geometry">
+            <mxRectangle width="533" height="244" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gSuPa3hESJbTdmmrSkDA-73" value="&lt;div style=&quot;font-size: 24px;&quot;&gt;&lt;div&gt;&lt;b&gt;issue8: 로깅, 예외처리 개발&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;issue9: 로깅, 예외처리를 통한 트러블 슈팅 준비&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;issue10: 성능 테스트 리팩토링 진행&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="gSuPa3hESJbTdmmrSkDA-72">
+          <mxGeometry x="11" y="48" width="540" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="gSuPa3hESJbTdmmrSkDA-60" value="실습 내용 및 주요 포인트" style="shape=tableRow;horizontal=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;strokeColor=inherit;bottom=0;right=0;dropTarget=0;fontStyle=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;startSize=30;collapsible=0;recursiveResize=0;expand=0;fontSize=16;" vertex="1" parent="gSuPa3hESJbTdmmrSkDA-51">
           <mxGeometry y="590" width="1630" height="246" as="geometry" />
         </mxCell>
         <mxCell id="gSuPa3hESJbTdmmrSkDA-61" value="" style="swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=0;connectable=0;strokeColor=inherit;fillColor=none;startSize=0;collapsible=0;recursiveResize=0;expand=0;fontSize=16;" vertex="1" parent="gSuPa3hESJbTdmmrSkDA-60">
@@ -72,15 +88,29 @@
             <mxRectangle width="533" height="246" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="gSuPa3hESJbTdmmrSkDA-76" value="&lt;div style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;Java, Spring 프로젝트 생성&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;GIT 커밋규칙, 브랜치 전략 설정&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;비즈니스 로직 시퀀스 다이어그램 작성&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;게시판 ERD 작성&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;JDBC Mysql 연동, Mybaits 설정&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;로그인 기능 AOP 적용&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;검색 API에 Redis 연동&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="gSuPa3hESJbTdmmrSkDA-61">
+          <mxGeometry x="20" y="13" width="430" height="220" as="geometry" />
+        </mxCell>
         <mxCell id="gSuPa3hESJbTdmmrSkDA-62" value="" style="swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=0;connectable=0;strokeColor=inherit;fillColor=none;startSize=0;collapsible=0;recursiveResize=0;expand=0;fontSize=16;" vertex="1" parent="gSuPa3hESJbTdmmrSkDA-60">
           <mxGeometry x="563" width="534" height="246" as="geometry">
             <mxRectangle width="534" height="246" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="gSuPa3hESJbTdmmrSkDA-77" value="&lt;div style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;대댓글 기능, 해시태그 기능 개발&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="gSuPa3hESJbTdmmrSkDA-62">
+          <mxGeometry x="17" y="95" width="370" height="70" as="geometry" />
+        </mxCell>
         <mxCell id="gSuPa3hESJbTdmmrSkDA-63" value="" style="swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=0;connectable=0;strokeColor=inherit;fillColor=none;startSize=0;collapsible=0;recursiveResize=0;expand=0;fontSize=16;" vertex="1" parent="gSuPa3hESJbTdmmrSkDA-60">
           <mxGeometry x="1097" width="533" height="246" as="geometry">
             <mxRectangle width="533" height="246" as="alternateBounds" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="gSuPa3hESJbTdmmrSkDA-75" value="" style="swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=0;connectable=0;strokeColor=inherit;fillColor=none;startSize=0;collapsible=0;recursiveResize=0;expand=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="40" y="376" width="533" height="244" as="geometry">
+            <mxRectangle width="533" height="244" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gSuPa3hESJbTdmmrSkDA-69" value="&lt;div style=&quot;font-size: 24px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;issue1: 프로젝트 생성&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;issue2: 사용자 CRUD API 개발 및 AOP 적용&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;issue3: 게시판 CRUD API 개발&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 24px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;issue4: 게시판 검색 API 개발&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="gSuPa3hESJbTdmmrSkDA-75">
+          <mxGeometry x="10" y="34" width="500" height="130" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
