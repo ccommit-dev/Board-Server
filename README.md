@@ -51,5 +51,11 @@
 ![게시글 검색 시퀀스](https://github.com/ccommit-dev/Board-Server/assets/77635521/c5f228fd-ca8f-4144-a407-30e2647f9159)
 
 ---
-# 아키텍처
+# 아키텍처(요약)
+![게시판 서버 아키텍처 drawio](https://github.com/ccommit-dev/Board-Server/assets/77635521/62e053a4-51a4-4387-90c4-f5e450441f2f)
+
+---
+# 아키텍처(상세)
 ![sli0](https://github.com/ccommit-dev/Board-Server/assets/77635521/bc8eb387-ec9b-4a51-9c55-80332aa88547)
+
+
