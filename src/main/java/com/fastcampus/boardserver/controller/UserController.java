@@ -45,9 +45,10 @@ public class UserController {
     public HttpStatus login(@RequestBody UserLoginRequest loginRequest,
                             HttpSession session) {
         ResponseEntity<LoginResponse> responseEntity = null;
-        String id = loginRequest.getUserId();
+        String userId = loginRequest.getUserId();
         String password = loginRequest.getPassword();
-        UserDTO userInfo = userService.login(id, password);
+        UserDTO userInfo = userService.login(userId, password);
+        String id = userInfo.getId().toString();
 
         if (userInfo == null) {
             return HttpStatus.NOT_FOUND;
