@@ -6,9 +6,9 @@
 <mapper namespace="com.fastcampus.boardserver.mapper.UserProfileMapper">
 
     <select id="getUserProfile" resultType="com.fastcampus.boardserver.dto.UserDTO">
-        SELECT userId, userId, password, nickName, createTime, isWithDraw, status
+        SELECT id, userId, password, nickName, createTime, isWithDraw, status
         FROM user
-        WHERE userId = #{id}
+        WHERE id = #{id}
     </select>
 
     <insert id="insertUserProfile" parameterType="com.fastcampus.boardserver.dto.UserDTO">
