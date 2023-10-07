@@ -44,7 +44,7 @@
 
 ---
 # ERD(Entity Relationship Diagram)
-![board-server](https://github.com/ccommit-dev/Board-Server/assets/77635521/0839ca6b-d9e0-4122-b6b1-6ee62234b670)
+![image](https://github.com/ccommit-dev/Board-Server/assets/77635521/7fb0ec6b-1317-4911-9315-067244a8dd9e)
 
 ---
 # 시퀀스
