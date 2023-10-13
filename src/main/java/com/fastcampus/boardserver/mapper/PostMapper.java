@@ -13,5 +13,5 @@ public interface PostMapper {
 
     public void updateProducts(PostDTO postDTO);
 
-    public void deleteProduct(int productId);
+    public void deleteProduct(int postId);
 }
