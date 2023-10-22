@@ -2,9 +2,11 @@ package com.fastcampus.boardserver.service.impl;
 
 import com.fastcampus.boardserver.dto.CommentDTO;
 import com.fastcampus.boardserver.dto.PostDTO;
+import com.fastcampus.boardserver.dto.TagDTO;
 import com.fastcampus.boardserver.dto.UserDTO;
 import com.fastcampus.boardserver.mapper.CommentMapper;
 import com.fastcampus.boardserver.mapper.PostMapper;
+import com.fastcampus.boardserver.mapper.TagMapper;
 import com.fastcampus.boardserver.mapper.UserProfileMapper;
 import com.fastcampus.boardserver.service.PostService;
 import lombok.extern.log4j.Log4j2;
@@ -24,6 +26,10 @@ public class PostServiceImpl implements PostService {
 
     @Autowired
     private CommentMapper commentMapper;
+
+    @Autowired
+    private TagMapper tagMapper;
+
 
     @Autowired
     private UserProfileMapper userProfileMapper;
@@ -94,6 +100,36 @@ public class PostServiceImpl implements PostService {
         } else {
             log.error("deletePostComment ERROR! {}", commentId);
             throw new RuntimeException("deletePostComment ERROR! 댓글 삭제 메서드를 확인해주세요\n" + "Params : " + commentId);
+        }
+    }
+
+    @Override
+    public void registerTag(TagDTO tagDTO) {
+        if (tagDTO.getPostId() != 0) {
+            tagMapper.register(tagDTO);
+        } else {
+            log.error("registerTag ERROR! {}", tagDTO);
+            throw new RuntimeException("registerTag ERROR! 태그 추가 메서드를 확인해주세요\n" + "Params : " + tagDTO);
+        }
+    }
+
+    @Override
+    public void updateTag(TagDTO tagDTO) {
+        if (tagDTO != null) {
+            tagMapper.updateTags(tagDTO);
+        } else {
+            log.error("updateTag ERROR! {}", tagDTO);
+            throw new RuntimeException("updateTag ERROR! 태그 변경 메서드를 확인해주세요\n" + "Params : " + tagDTO);
+        }
+    }
+
+    @Override
+    public void deletePostTag(int userId, int tagId) {
+        if (userId != 0 && tagId != 0) {
+            tagMapper.deletePostTag(tagId);
+        } else {
+            log.error("deletePostTag ERROR! {}", tagId);
+            throw new RuntimeException("deletePostTag ERROR! 태그 삭제 메서드를 확인해주세요\n" + "Params : " + tagId);
         }
     }
 }
