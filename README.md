@@ -16,7 +16,7 @@
 ---
 # 성능테스트 툴
 - Python 3.9, Locust
-- ****[https://ovenapp.io/view/Pv1HR7ajNN47W6qWgKHjIro334XPQvBj/](https://github.com/ccommit-dev/Board-Server-Locust)****
+- ****[성능테스트 툴](https://github.com/ccommit-dev/Board-Server-Locust)****
 
 ---
 # 기획
