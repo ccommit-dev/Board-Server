@@ -14,6 +14,11 @@
 - JAVA 17, Spring Boot 2.3, MyBatis, MySQL, Redis
 
 ---
+# 성능테스트 툴
+- Python 3.9, Locust
+- - ****[https://ovenapp.io/view/Pv1HR7ajNN47W6qWgKHjIro334XPQvBj/](https://github.com/ccommit-dev/Board-Server-Locust)****
+
+---
 # 기획
 - 커뮤니티 사이트의 게시판을 구현함으로써 자유롭게 소통하는 및 정보 공유 사이트를 목표로 구현
 - ****https://ovenapp.io/view/Pv1HR7ajNN47W6qWgKHjIro334XPQvBj/****
