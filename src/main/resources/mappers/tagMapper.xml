@@ -7,18 +7,16 @@
 
     <insert id="register" parameterType="com.fastcampus.boardserver.dto.TagDTO">
         INSERT INTO `tag`
-        (`postId`,
-         `contents`,
-         `subTagId`)
-        VALUES (#{postId},
-                #{contents},
-                #{subTagId})
+        (`name`,
+         `url`)
+        VALUES (#{name},
+                #{url})
     </insert>
 
     <update id="updateTags" parameterType="com.fastcampus.boardserver.dto.TagDTO">
         UPDATE tag
-        SET contents = #{contents},
-            subTagId = #{subTagId}
+        SET name = #{name},
+            url = #{url}
         WHERE id = #{id}
     </update>
 
