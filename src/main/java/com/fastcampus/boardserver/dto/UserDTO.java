@@ -1,5 +1,6 @@
 package com.fastcampus.boardserver.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,6 +10,7 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserDTO {
     public enum Status {
         DEFAULT, ADMIN, DELETED

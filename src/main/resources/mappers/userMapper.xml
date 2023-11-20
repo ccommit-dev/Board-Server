@@ -43,7 +43,8 @@
                nickName,
                createTime,
                isWithDraw,
-               status
+               status,
+               isAdmin
         FROM user
         WHERE userId = #{id}
           AND passWord = #{password}

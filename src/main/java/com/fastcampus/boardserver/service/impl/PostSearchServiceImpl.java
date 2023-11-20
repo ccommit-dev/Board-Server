@@ -1,7 +1,7 @@
 package com.fastcampus.boardserver.service.impl;
 
-import com.fastcampus.boardserver.dto.CategoryDTO;
 import com.fastcampus.boardserver.dto.PostDTO;
+import com.fastcampus.boardserver.dto.request.PostSearchRequest;
 import com.fastcampus.boardserver.mapper.PostSearchMapper;
 import com.fastcampus.boardserver.service.PostSearchService;
 import lombok.extern.log4j.Log4j2;
@@ -17,12 +17,10 @@ public class PostSearchServiceImpl implements PostSearchService {
 
     @Autowired
     private PostSearchMapper productSearchMapper;
-
     @Cacheable(value="getProducts")
     @Override
-    public List<PostDTO> getProducts(PostDTO productDTO, CategoryDTO categoryDTO) {
-        productDTO.setCategoryId(categoryDTO.getId());
-        List<PostDTO> postDTOList = productSearchMapper.selectPosts(productDTO,categoryDTO);
+    public List<PostDTO> getProducts(PostSearchRequest postSearchRequest) {
+        List<PostDTO> postDTOList = productSearchMapper.selectPosts(postSearchRequest);
         return postDTOList;
     }
 }

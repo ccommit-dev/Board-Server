@@ -12,8 +12,11 @@ import org.springframework.stereotype.Service;
 @Log4j2
 public class CategoryServiceImpl implements CategoryService {
 
-    @Autowired
     private CategoryMapper categoryMapper;
+
+    public CategoryServiceImpl(CategoryMapper categoryMapper) {
+        this.categoryMapper = categoryMapper;
+    }
 
     @Override
     public void register(String accountId, CategoryDTO categoryDTO) {

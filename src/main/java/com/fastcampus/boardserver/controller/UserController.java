@@ -54,7 +54,7 @@ public class UserController {
             return HttpStatus.NOT_FOUND;
         } else if (userInfo != null) {
             loginResponse = LoginResponse.success(userInfo);
-            if (userInfo.getStatus() == (UserDTO.Status.ADMIN))
+            if (userInfo.isAdmin())
                 SessionUtil.setLoginAdminId(session, id);
             else
                 SessionUtil.setLoginMemberId(session, id);
