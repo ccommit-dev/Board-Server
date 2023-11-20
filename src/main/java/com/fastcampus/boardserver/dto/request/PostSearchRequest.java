@@ -1,6 +1,6 @@
 package com.fastcampus.boardserver.dto.request;
 
-import com.fastcampus.boardserver.dto.CategoryDTO;
+import com.fastcampus.boardserver.dto.SortStatus;
 import lombok.*;
 
 @Builder
@@ -16,5 +16,5 @@ public class PostSearchRequest {
     private int views;
     private int categoryId;
     private int userId;
-    private CategoryDTO.SortStatus sortStatus;
+    private SortStatus sortStatus;
 }

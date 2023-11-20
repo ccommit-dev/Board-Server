@@ -2,6 +2,7 @@ package com.fastcampus.boardserver.controller;
 
 import com.fastcampus.boardserver.aop.LoginCheck;
 import com.fastcampus.boardserver.dto.CategoryDTO;
+import com.fastcampus.boardserver.dto.SortStatus;
 import com.fastcampus.boardserver.service.impl.CategoryServiceImpl;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,7 +33,7 @@ public class CategoryController {
     public void updateCategories(String accountId,
                                  @PathVariable(name = "categoryId") int categoryId,
                                  @RequestBody CategoryRequest categoryRequest) {
-        CategoryDTO categoryDTO = new CategoryDTO(categoryId, categoryRequest.getName(), CategoryDTO.SortStatus.NEWEST,10,1);
+        CategoryDTO categoryDTO = new CategoryDTO(categoryId, categoryRequest.getName(), SortStatus.NEWEST,10,1);
         categoryService.update(categoryDTO);
     }
 
