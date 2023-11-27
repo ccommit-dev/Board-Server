@@ -14,6 +14,7 @@ import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+;
 
 
 @Component
@@ -40,13 +41,14 @@ public class LoginCheckAspect {
             }
         }
         if (id == null) {
-            log.debug(proceedingJoinPoint.toString()+ "accountName :" + id);
-            throw new HttpStatusCodeException(HttpStatus.UNAUTHORIZED, "로그인한 id값을 확인해주세요.") {};
+            log.info(proceedingJoinPoint.toString() + "accountName :" + id);
+            throw new HttpStatusCodeException(HttpStatus.UNAUTHORIZED, "로그인한 id값을 확인해주세요.") {
+            };
         }
 
         Object[] modifiedArgs = proceedingJoinPoint.getArgs();
 
-        if(proceedingJoinPoint.getArgs()!=null)
+        if (proceedingJoinPoint.getArgs() != null)
             modifiedArgs[idIndex] = id;
 
         return proceedingJoinPoint.proceed(modifiedArgs);
