@@ -43,6 +43,15 @@ public class PostServiceImpl implements PostService {
 
         if (memberInfo != null) {
             postMapper.register(postDTO);
+            Integer postId = postDTO.getId();
+            // 생성된 post 객체 에서 태그 리스트 생성
+            for(int i=0; i<postDTO.getTagDTOList().size(); i++){
+                TagDTO tagDTO = postDTO.getTagDTOList().get(i);
+                tagMapper.register(tagDTO);
+                Integer tagId = tagDTO.getId();
+                // M:N 관계 테이블 생성
+                tagMapper.createPostTag(tagId, postId);
+            }
         } else {
             log.error("register ERROR! {}", postDTO);
             throw new RuntimeException("register ERROR! 상품 등록 메서드를 확인해주세요\n" + "Params : " + postDTO);

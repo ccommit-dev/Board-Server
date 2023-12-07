@@ -11,6 +11,9 @@
          `url`)
         VALUES (#{name},
                 #{url})
+        <selectKey keyProperty="id" resultType="Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
     </insert>
 
     <update id="updateTags" parameterType="com.fastcampus.boardserver.dto.TagDTO">
@@ -25,4 +28,9 @@
         WHERE id = #{tagId}
     </delete>
 
+
+    <insert id="createPostTag">
+        INSERT INTO posttag(tagId, postId)
+        VALUES (#{tagId}, #{postId});
+    </insert>
 </mapper>

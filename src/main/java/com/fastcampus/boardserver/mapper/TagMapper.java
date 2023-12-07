@@ -10,4 +10,7 @@ public interface TagMapper {
     public void updateTags(TagDTO tagDTO);
 
     public void deletePostTag(int tagId);
+
+    public void createPostTag(Integer tagId, Integer postId);
+
 }
