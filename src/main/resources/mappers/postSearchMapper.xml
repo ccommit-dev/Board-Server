@@ -5,7 +5,7 @@
 
 <mapper namespace="com.fastcampus.boardserver.mapper.PostSearchMapper">
 
-    <select id="selectPosts" resultType="com.fastcampus.boardserver.dto.PostDTO">
+    <select id="selectPosts" resultType="com.fastcampus.boardserver.dto.request.PostSearchRequest">
         SELECT `id`,
         `name`,
         `isAdmin`,
@@ -17,28 +17,27 @@
         `fileId`,
         `updateTime`
         FROM post
-<!--        <choose>-->
-<!--            <when test="categoryDTO.sortStatus.toString() == 'CATEGORIES'">-->
-<!--                ORDER BY categoryId ASC-->
-<!--            </when>-->
-<!--            <when test="categoryDTO.sortStatus.toString() == 'NEWEST'">-->
-<!--                ORDER BY createTime DESC-->
-<!--            </when>-->
-<!--            <when test="categoryDTO.sortStatus.toString() == 'OLDEST'">-->
-<!--                ORDER BY createTime ASC-->
-<!--            </when>-->
-<!--            <when test="categoryDTO.sortStatus.toString() == 'GRADE'">-->
-<!--                LEFT JOIN user-->
-<!--                ON post.userId = user.id-->
-<!--                GROUP BY user.id-->
-<!--                ORDER BY user.status DESC-->
-<!--            </when>-->
-<!--        </choose>-->
-<!--        <include refid="COMMON_PAGING_TAIL"/>-->
-    </select>
+        WHERE
+        1=1
+        <if test="name != null and name != ''">
+            AND name LIKE CONCAT(#{name}, '%')
+        </if>
+        <if test="contents != null and contents != ''">
+            AND contents LIKE CONCAT(#{contents}, '%')
+        </if>
+        <if test="categoryId != 0">
+            AND categoryId = #{categoryId}
+        </if>
+        <if test="sortStatus.toString() == 'NEWEST'">
+            ORDER BY createTime DESC
+        </if>
+        <if test="sortStatus.toString() == 'OLDEST'">
+            ORDER BY createTime ASC
+        </if>
+        <if test="sortStatus.toString() == 'CATEGORIES'">
+            ORDER BY categoryId
+        </if>
 
-<!--    <sql id="COMMON_PAGING_TAIL">-->
-<!--        LIMIT #{categoryDTO.searchCount, jdbcType=INTEGER} OFFSET #{categoryDTO.pagingStartOffset, jdbcType=INTEGER}-->
-<!--    </sql>-->
+    </select>
 
 </mapper>
