@@ -4,14 +4,20 @@
 ---
 # 목적
 - 대용량 트래픽을 고려한 어플리케이션 개발 (초당 1000 tps 이상의 게시글 검색 API)
-- 객체지향과 가독성을 고려한 코드 작성 방법 공유
+- 객체지향과 디자인 패턴을 적용 및 가독성을 고려한 코드 작성 방법 공유
 - 현업 단계에서 코드리뷰를 어떻게 하는지 경험 공유 공유
 - 모니터링 및 트러블 슈팅 전략 공유
-- 윤영을 위한 배포 자동화 CI/CD 설정 방법 공유
+- 운영을 위한 배포 자동화 CI/CD 설정 방법 공유
+- 젠킨스 툴로 배포 자동화를 통해 개발 생산성 높이기
 
 ---
 # 사용기술
 - JAVA 17, Spring Boot 2.3, MyBatis, MySQL, Redis
+
+---
+# 성능테스트 툴
+- Python 3.9, Locust
+- ****[성능테스트 툴](https://github.com/ccommit-dev/Board-Server-Locust)****
 
 ---
 # 기획
@@ -45,7 +51,7 @@
 
 ---
 # ERD(Entity Relationship Diagram)
-![board-server](https://github.com/ccommit-dev/Board-Server/assets/77635521/0839ca6b-d9e0-4122-b6b1-6ee62234b670)
+![image](https://github.com/ccommit-dev/Board-Server/assets/77635521/7fb0ec6b-1317-4911-9315-067244a8dd9e)
 
 ---
 # 시퀀스
@@ -59,8 +65,5 @@
 # 아키텍처(요약)
 ![게시판 서버 아키텍처 drawio](https://github.com/ccommit-dev/Board-Server/assets/77635521/62e053a4-51a4-4387-90c4-f5e450441f2f)
 
----
-# 아키텍처(상세)
-![sli0](https://github.com/ccommit-dev/Board-Server/assets/77635521/bc8eb387-ec9b-4a51-9c55-80332aa88547)
 
 
