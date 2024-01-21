@@ -45,7 +45,21 @@
                isWithDraw,
                status
         FROM user
-        WHERE userId = #{id}
+        WHERE id = #{id}
+          AND passWord = #{password}
+          AND status != 'DELETE'
+    </select>
+
+    <select id="findByUserIdAndPassword" resultType="com.fastcampus.boardserver.dto.UserDTO">
+        SELECT id,
+               userId,
+               passWord,
+               nickName,
+               createTime,
+               isWithDraw,
+               status
+        FROM user
+        WHERE userId = #{userId}
           AND passWord = #{password}
           AND status != 'DELETE'
     </select>

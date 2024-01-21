@@ -24,7 +24,6 @@ public class UserController {
 
     private final UserServiceImpl userService;
     private static final ResponseEntity<LoginResponse> FAIL_RESPONSE = new ResponseEntity<LoginResponse>(HttpStatus.BAD_REQUEST);
-    private static LoginResponse loginResponse;
 
     @Autowired
     public UserController(UserServiceImpl userService) {
@@ -52,7 +51,7 @@ public class UserController {
         if (userInfo == null) {
             return HttpStatus.NOT_FOUND;
         } else if (userInfo != null) {
-            loginResponse = LoginResponse.success(userInfo);
+            LoginResponse loginResponse = LoginResponse.success(userInfo);
             if (userInfo.getStatus() == (UserDTO.Status.ADMIN))
                 SessionUtil.setLoginAdminId(session, id);
             else
@@ -88,6 +87,8 @@ public class UserController {
 
         try {
             userService.updatePassword(Id, beforePassword, afterPassword);
+            UserDTO userInfo = userService.login(Id, afterPassword);
+            LoginResponse loginResponse = LoginResponse.success(userInfo);
             ResponseEntity.ok(new ResponseEntity<LoginResponse>(loginResponse, HttpStatus.OK));
         } catch (IllegalArgumentException e) {
             log.error("updatePassword 실패", e);
@@ -103,7 +104,9 @@ public class UserController {
         String Id = SessionUtil.getLoginMemberId(session);
 
         try {
+            UserDTO userInfo = userService.login(Id, userDeleteId.getPassword());
             userService.deleteId(Id, userDeleteId.getPassword());
+            LoginResponse loginResponse = LoginResponse.success(userInfo);
             responseEntity = new ResponseEntity<LoginResponse>(loginResponse, HttpStatus.OK);
         } catch (RuntimeException e) {
             log.info("deleteID 실패");
