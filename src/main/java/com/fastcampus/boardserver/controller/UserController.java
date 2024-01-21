@@ -24,7 +24,6 @@ public class UserController {
 
     private final UserServiceImpl userService;
     private static final ResponseEntity<LoginResponse> FAIL_RESPONSE = new ResponseEntity<LoginResponse>(HttpStatus.BAD_REQUEST);
-    private static LoginResponse loginResponse;
 
     @Autowired
     public UserController(UserServiceImpl userService) {
@@ -44,21 +43,19 @@ public class UserController {
     @PostMapping("sign-in")
     public HttpStatus login(@RequestBody UserLoginRequest loginRequest,
                             HttpSession session) {
-        ResponseEntity<LoginResponse> responseEntity = null;
-        String id = loginRequest.getUserId();
+        String userId = loginRequest.getUserId();
         String password = loginRequest.getPassword();
-        UserDTO userInfo = userService.login(id, password);
+        UserDTO userInfo = userService.login(userId, password);
+        String id = userInfo.getId().toString();
 
         if (userInfo == null) {
             return HttpStatus.NOT_FOUND;
         } else if (userInfo != null) {
-            loginResponse = LoginResponse.success(userInfo);
+            LoginResponse loginResponse = LoginResponse.success(userInfo);
             if (userInfo.getStatus() == (UserDTO.Status.ADMIN))
                 SessionUtil.setLoginAdminId(session, id);
             else
                 SessionUtil.setLoginMemberId(session, id);
-
-            responseEntity = new ResponseEntity<LoginResponse>(loginResponse, HttpStatus.OK);
         } else {
             throw new RuntimeException("Login Error! 유저 정보가 없거나 지워진 유저 정보입니다.");
         }
@@ -90,6 +87,8 @@ public class UserController {
 
         try {
             userService.updatePassword(Id, beforePassword, afterPassword);
+            UserDTO userInfo = userService.login(Id, afterPassword);
+            LoginResponse loginResponse = LoginResponse.success(userInfo);
             ResponseEntity.ok(new ResponseEntity<LoginResponse>(loginResponse, HttpStatus.OK));
         } catch (IllegalArgumentException e) {
             log.error("updatePassword 실패", e);
@@ -105,7 +104,9 @@ public class UserController {
         String Id = SessionUtil.getLoginMemberId(session);
 
         try {
+            UserDTO userInfo = userService.login(Id, userDeleteId.getPassword());
             userService.deleteId(Id, userDeleteId.getPassword());
+            LoginResponse loginResponse = LoginResponse.success(userInfo);
             responseEntity = new ResponseEntity<LoginResponse>(loginResponse, HttpStatus.OK);
         } catch (RuntimeException e) {
             log.info("deleteID 실패");

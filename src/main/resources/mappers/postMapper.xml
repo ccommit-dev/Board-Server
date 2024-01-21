@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fastcampus.boardserver.mapper.PostMapper">
+
+    <insert id="register" parameterType="com.fastcampus.boardserver.dto.PostDTO">
+        INSERT INTO post (name, isAdmin, contents, createTime, views, categoryId, userId, fileId, updateTime )
+        VALUES (#{name}, #{isAdmin}, #{contents}, #{createTime}, #{views}, #{categoryId}, #{userId}, #{fileId}, #{updateTime})
+    </insert>
+
+    <select id="selectMyProducts" resultType="com.fastcampus.boardserver.dto.PostDTO">
+        SELECT `id`,
+               `name`,
+               `isAdmin`,
+               `contents`,
+               `createTime`,
+               `views`,
+               `categoryId`,
+               `userId`,
+               `fileId`,
+               `updateTime`
+        FROM `post`
+        WHERE userId = #{userId}
+    </select>
+
+    <update id="updateProducts" parameterType="com.fastcampus.boardserver.dto.PostDTO">
+        UPDATE post
+        SET name = #{name},
+            contents = #{contents},
+            views = #{views},
+            categoryId = #{categoryId},
+            userId = #{userId},
+            fileId = #{fileId},
+            updateTime = #{updateTime}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteProduct" >
+        DELETE FROM post
+        WHERE id = #{productId}
+    </delete>
+
+</mapper>
