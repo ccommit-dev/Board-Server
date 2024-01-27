@@ -1,3 +1,5 @@
 /.idea/
 /out/
 /.gradle/
+out/
+.gradle/

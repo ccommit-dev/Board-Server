@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fastcampus.boardserver.mapper.PostSearchMapper">
+
+    <select id="selectPosts" resultType="com.fastcampus.boardserver.dto.request.PostSearchRequest">
+        SELECT `id`,
+        `name`,
+        `isAdmin`,
+        `contents`,
+        `createTime`,
+        `views`,
+        `categoryId`,
+        `userId`,
+        `fileId`,
+        `updateTime`
+        FROM post
+        WHERE
+        1=1
+        <if test="name != null and name != ''">
+            AND name LIKE CONCAT(#{name}, '%')
+        </if>
+        <if test="contents != null and contents != ''">
+            AND contents LIKE CONCAT(#{contents}, '%')
+        </if>
+        <if test="categoryId != 0">
+            AND categoryId = #{categoryId}
+        </if>
+        <if test="sortStatus.toString() == 'NEWEST'">
+            ORDER BY createTime DESC
+        </if>
+        <if test="sortStatus.toString() == 'OLDEST'">
+            ORDER BY createTime ASC
+        </if>
+        <if test="sortStatus.toString() == 'CATEGORIES'">
+            ORDER BY categoryId
+        </if>
+
+    </select>
+
+</mapper>
